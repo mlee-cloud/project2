@@ -1,0 +1,19 @@
+// =======================================
+// Font Settings
+// =======================================
+
+// rem 단위 계산을 위한 html 사이즈 리셋
+$html-fz: 16px;
+
+// 본문(paragraph) 사이즈
+$body-fz: 16px;
+
+// 기본 행간 비율
+$line-height: 1.5;
+
+// 본문 행간 비율
+$base-line: $body-fz * 1.5;
+
+// 적용 웹 폰트
+$font-family-ko: 'NanumGothic','나눔고딕','Malgun Gothic','맑은 고딕',Dotum,'돋움',AppleSDGothicNeo,sans-serif;
+$font-family-en: 'NanumGothic','나눔고딕','Malgun Gothic','맑은 고딕',Dotum,'돋움',AppleSDGothicNeo,sans-serif;

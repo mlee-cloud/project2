@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="/include/_head.html"-->
+</head>
+<body>
+	<div class="wrap">
+        <!--#include file="/include/_header.html"-->
+        <!--#include file="/include/_location.html"-->
+		<div class="sub-cont-wrap">
+            <p class="sub-title">Q&A</p>
+            <div class="subCon">
+                <div class="bbs-write-wrap">
+                    <dl class="write-category">
+                        <dt>분류</dt>
+                        <dd>
+                            <input type="radio" name="category" id="category01" checked>
+                            <label for="category01">드론 조종</label>
+                            <input type="radio" name="category" id="category02">
+                            <label for="category02">비행 구역</label>
+                            <input type="radio" name="category" id="category03">
+                            <label for="category03">기타</label>
+                        </dd>
+                    </dl>
+                    <!-- 추가 2019.05.28 -->
+                    <!-- 비회원일 경우 -->
+                    <div class="nonmember">
+                        <dl class="author">
+                            <dt>작성자</dt>
+                            <dd>
+                                <input type="text" name="qnaAuthor" id="qnaAuthor">
+                            </dd>
+                        </dl>
+                        <dl class="password">
+                            <dt>비밀번호</dt>
+                            <dd>
+                                <input type="password" name="qnaPass" id="qnaPass"> <!-- 수정 2019.05.31 -->
+                            </dd>
+                        </dl>
+                    </div>
+                    <!--// 추가 2019.05.28 -->
+                    <dl class="write-subject">
+                        <dt>제목</dt>
+                        <dd>
+                            <input type="text" class="bbs-subject">
+                        </dd>
+                    </dl>
+                    <dl class="write-cont">
+                        <dt>내용</dt>
+                        <dd>
+                            <textarea name="" id="" placeholder="내용을 작성해주세요." class="editor"></textarea> <!-- 수정 19.06.25 -->
+                        </dd>
+                    </dl>
+                    <!-- 수정 19.06.26 -->
+                    <!-- 추가 19.06.25 -->
+                    <dl class="write-attach">
+                        <dt>첨부파일</dt>
+                        <dd>
+                            <input type="text" class="attach-name" disabled="disabled" placeholder="파일선택">
+                            <input type="file" id="btn-attach" class="btn-attach">
+                            <label for="btn-attach">파일찾기</label>
+                        </dd>
+                    </dl>
+                    <!--// 추가 19.06.25 -->
+                    <!--// 수정 19.06.26 -->
+                    <dl>
+                        <dt>비밀글 설정</dt>
+                        <dd>
+                            <input type="radio" name="secret" id="secret01">
+                            <label for="secret01">공개글</label>
+                            <input type="radio" name="secret" id="secret02" checked>
+                            <label for="secret02">비밀글</label>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="reserv_btn">
+                    <a href="./qna-list.html">취소하기</a>
+                    <a href="#none">작성하기</a>
+                </div>
+            </div>
+        </div>
+		<!--#include file="/include/_footer.html"-->
+	</div>
+</body>
+</html>

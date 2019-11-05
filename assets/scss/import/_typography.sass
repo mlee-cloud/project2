@@ -1,0 +1,16 @@
+// =======================================
+// Font Language
+// =======================================
+html
+  font-size: $html-fz
+  font-family: $font-family-ko
+  body
+    line-height: $base-line
+  &[lang="ko-KR"], &[lang="ko"]
+    font-family: $font-family-ko
+    body
+      font-size: $body-fz
+  &[lang="en"], *[lang="en"]
+    font-family: $font-family-en
+    body
+      font-size: $body-fz + 2px

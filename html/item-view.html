@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="/include/_head.html"-->
+	<link rel="stylesheet" href="./assets/css/daterangepicker.css"/>
+	<script src="./assets/js/lib/moment.min.js"></script>
+	<script src="./assets/js/lib/jquery.daterangepicker.js"></script>
+</head>
+<body>
+	<div class="wrap">
+        <!--#include file="/include/_header.html"-->
+        <!--#include file="/include/_location.html"-->
+		<div class="sub-cont-wrap">
+			<div class="subCon item_view">
+				<dl class="item_view01">
+					<dt>
+						<div class="badge"><!-- 19.06.05 추가 -->
+							<span>협회</span>
+							<span>드론</span>
+							<span>드론조종</span>
+							<span>드론조종</span>
+							<span>드론조종</span>
+							<span>드론조종</span>
+							<span>드론조종</span>
+						</div>
+						<div class="swiper-container view01_ul">
+							<ul class="swiper-wrapper">
+								<li class="swiper-slide"><img src="./assets/img/view_iimg01.jpg" alt="1"></li>
+								<li class="swiper-slide"><img src="./assets/img/view_iimg01.jpg" alt="2"></li>
+								<li class="swiper-slide"><img src="./assets/img/view_iimg01.jpg" alt="3"></li>
+							</ul>
+							<div class="img_wrap">
+								<img class="on" src="./assets/img/view_iimg01.jpg" alt="">
+								<img src="./assets/img/view_iimg01.jpg" alt="">
+								<img src="./assets/img/view_iimg01.jpg" alt="">
+							</div>
+						</div>
+						<script>
+							if ( $(".view01_ul ul li").length >= 2 ){
+								var view01_ul = new Swiper(".view01_ul", {
+									centeredSlides: true,
+									effect: "fade",
+									autoplay: {
+										delay: 3000,
+										disableOnInteraction: false,
+									},
+									loop: true,
+								});
+
+								// 상품상세 이미지 이미지 클릭
+								$(".item_view01 .img_wrap img").click(function(){
+									if ( !$(this).hasClass("on") ){
+										$(".item_view01 .img_wrap img").removeClass("on");
+										$(this).addClass("on");
+										view01_ul.slideTo($(this).index() + 1);
+									}
+								});
+							}
+						</script>
+					</dt>
+					<dd>
+						<h3><span>[드론]</span> 30배줌 영상 드론</h3>
+						<ul>
+							<li><p>기체</p><span>유시스 TB504</span></li>
+							<li><p>카메라</p><span>스테빌라이저 30배 광학줌</span></li>
+							<li><p>비행시간</p><span>30분</span></li>
+							<li><p>영상</p><span>FHD(720P, 30fps)</span></li>
+							<li><p>이용가능지역</p><span>서울, 경기</span></li>
+							<li><p>기타</p><span>기타 내용</span></li>
+						</ul>
+						<ul>
+							<li><p>날짜</p>
+								<span class="date">
+									<div><input type="text" id="date01" placeholder="시작일" readonly disabled /></div>
+									<strong class="bar"></strong>
+									<div><input type="text" id="date02" placeholder="종료일" readonly disabled /></div>
+									<div class="calendar"></div>
+								</span>
+							</li>
+							<li><p>총 금액</p><span class="price"><span><strong>1,000,000</strong>원 / <strong>1</strong>일</span>(VAT 별도)</span></li>
+						</ul>
+						<a href="./reservation.html">상품 예약</a>
+					</dd>
+					<script>
+						/** 특정날짜 비활성화 및 비선택*/
+						var disableDate = ['2019-05-25~2019-05-27', '2019-05-29', '2019-05-31~2019-06-05', '2019-06-11', '2019-06-13', '2019-06-19~2019-06-28'];
+
+						var $calendar = $(".item_view01 .date");
+						var current = new Date();		//현재 시간
+						var data = {
+							current: new Date(),		//현재시간
+							year: current.getFullYear(),
+							month: current.getMonth()+1,
+							date: current.getDate(),
+							separator: '~',
+							timer: null,
+							//캘린더 선택영역 초기화
+							calendar_reset: function () {
+								var dateRangePicker = $calendar.data('dateRangePicker');
+								dateRangePicker.clear();
+								dateRangePicker.resetMonthsView();
+								$("#date01, #date02").val("");
+							},
+							//특정날짜 비활성화 및 비선택
+							disabledFunc: function (cb) {
+								var div = $('.date-picker-wrapper td div');
+								for(var x=0 ; x<div.length; x++){
+									var compareDate = new Date(parseFloat(div[x].getAttribute('time')));
+									compareDate = new Date(compareDate.getFullYear(), compareDate.getMonth(), compareDate.getDate());
+
+									disableDate.forEach(function (value, idx) {
+										var range = value.split(data.separator);
+										var startDate = new Date(range[0].trim());
+										var endDate = (range.length == 2 ? new Date(range[1].trim()): startDate);
+										startDate.setHours(0);
+										endDate.setHours(0);
+
+										if(compareDate.getTime() >= startDate.getTime() && compareDate.getTime() <= endDate.getTime()){
+											var currentDIV = div[x].classList;
+											currentDIV.remove('valid');
+											currentDIV.remove('checked');
+											currentDIV.add('invalid');
+										}
+									});
+								}
+								cb();
+							},
+							//0607_수정
+							isBetweenDate: function (from, to, checkf, checkT) {
+								var fDate, tDate, f_Date, t_Date;
+								fDate = Date.parse(from);
+								tDate = Date.parse(to);
+								f_Date = Date.parse(checkf),
+								t_Date = Date.parse(checkT);
+								if((f_Date <= tDate && f_Date >= fDate) || (t_Date <= tDate && t_Date >= fDate))  return true;
+								return false;
+							}
+						}
+						$calendar.dateRangePicker({
+							autoClose: false,
+							singleMonth: true,
+							showShortcuts: false,
+							showDateFilter: function(time, date){
+								clearTimeout(data.timer);
+								var $body = $calendar.find('tbody').css('visibility', 'hidden');
+								data.timer = setTimeout(function () {
+									data.disabledFunc(function () {
+										$body.css('visibility', 'visible');
+									});
+								}, 0);
+								return date;
+							},
+							hoveringTooltip: function(days, startTime, hoveringTime){
+								var $div = $calendar.find('div.hovering');
+								var count = ($div.length+1)-$div.filter('.invalid').length;
+								return count > 1 ? count + ' 일간' : '';
+							},
+							language: "ko",
+							startDate: data.year+'.'+data.month+'.'+data.date,
+							inline:true,
+							container: '.calendar',
+							customTopBar: "<a href='javascript:data.calendar_reset();'>선택 초기화<img src='./assets/img/reset_icon.png' alt=''></a>",
+							format: "YYYY.MM.DD",
+							separator: data.separator
+						}).on({
+							"datepicker-change": function(event,obj) { //레이어가 열리고 날짜가 변경 되었을때
+								var value = obj.value.split(data.separator),
+									startDate = new Date(value[0].replace(/[.]/gi, '-')),
+									endDate = new Date(value[1].replace(/[.]/gi, '-')),
+									isBetweenDate = false,
+									disableArr = [];
+								for(var x=0; x<disableDate.length; x++){
+									var temp = disableDate[x].split('~'),
+										sDate = new Date(temp[0]),
+										eDate = new Date(temp[(temp.length==1? 0: 1)]);
+									isBetweenDate = data.isBetweenDate(startDate, endDate, sDate, eDate);
+									if(isBetweenDate) {
+										disableArr.push(temp.toString().replace(',', ' '+(data.separator)+' '));
+									}
+								}
+								if(disableArr.length == 0){
+									$("#date01").val(value[0]);
+									$("#date02").val(value[1]);
+									$calendar.data("dateRangePicker").close();
+								}else{
+									alert('선택불가능한 날짜가 포함되어 있습니다.\n'+disableArr.join(', '));
+									$calendar.data("dateRangePicker").setDateRange($("#date01").val(), $("#date02").val());
+									$calendar.data("dateRangePicker").open();
+								}
+							},
+							"datepicker-open": function(a, obj) {
+								var $obj = obj.relatedTarget.find(".apply-btn");
+								$obj.remove();
+							}
+						});
+					</script>
+				</dl>
+				<div class="item_view02">
+					<h2>상세정보</h2>
+					<img class="pc_img" src="./assets/img/item_view02_img.jpg" alt="">
+					<img class="mo_img" src="./assets/img/m_item_view02_img.jpg" alt="">
+					<div><!-- 19.06.17 pc용, 모바일용 이미지 -->
+						<img class="pc_img" src="./assets/img/item_view02_img02.jpg" alt="">
+						<img class="mo_img" src="./assets/img/m_item_view02_img02.jpg" alt="">
+					</div>
+				</div>
+				<div class="item_view04"><!-- 19.06.05 별점추가 -->
+					<h2>25개의 후기가 있습니다.</h2>
+					<ul>
+						<li class="active">
+							<div class="txt_wrap">
+								<div class="star">
+									<img src="./assets/img/star_on.png" alt="">
+									<img src="./assets/img/star_on.png" alt="">
+									<img src="./assets/img/star_on.png" alt="">
+									<img src="./assets/img/star_on.png" alt="">
+									<img src="./assets/img/star_off.png" alt="">
+								</div>
+								<p class="txt">화질도 좋고 조작 방법도 어렵지 않아서 쉽게 사용했습니다~^^</p>
+								<p class="name_day"><span>박고객</span><span>2019.06.28</span></p>
+							</div>
+							<div class="btn_wrap">
+								<a class="review_edit" href="javascript:;">수정</a>
+								<a class="review_remove" href="javascript:;">삭제</a>
+							</div>
+						</li>
+						<li>
+							<div class="txt_wrap">
+								<div class="star">
+									<img src="./assets/img/star_on.png" alt="">
+									<img src="./assets/img/star_on.png" alt="">
+									<img src="./assets/img/star_on.png" alt="">
+									<img src="./assets/img/star_on.png" alt="">
+									<img src="./assets/img/star_off.png" alt="">
+								</div>
+								<p class="txt">정말 좋네요 드론 서비스 덕분에 편하게 안전 점검 할 수 있었습니다 강추합니다 앞으로도 자주 사용할게요</p>
+								<p class="name_day"><span>김고객</span><span>2019.06.28</span></p>
+							</div>
+						</li>
+						<li>
+							<div class="txt_wrap">
+								<div class="star">
+									<img src="./assets/img/star_on.png" alt="">
+									<img src="./assets/img/star_on.png" alt="">
+									<img src="./assets/img/star_on.png" alt="">
+									<img src="./assets/img/star_on.png" alt="">
+									<img src="./assets/img/star_off.png" alt="">
+								</div>
+								<p class="txt">정말 좋네요 드론 서비스 덕분에 편하게 안전 점검 할 수 있었습니다 강추합니다 앞으로도 자주 사용할게요</p>
+								<p class="name_day"><span>김고객</span><span>2019.06.28</span></p>
+							</div>
+						</li>
+						<li>
+							<div class="txt_wrap">
+								<div class="star">
+									<img src="./assets/img/star_on.png" alt="">
+									<img src="./assets/img/star_on.png" alt="">
+									<img src="./assets/img/star_on.png" alt="">
+									<img src="./assets/img/star_on.png" alt="">
+									<img src="./assets/img/star_off.png" alt="">
+								</div>
+								<p class="txt">정말 좋네요 드론 서비스 덕분에 편하게 안전 점검 할 수 있었습니다 강추합니다 앞으로도 자주 사용할게요</p>
+								<p class="name_day"><span>김고객</span><span>2019.06.28</span></p>
+							</div>
+						</li>
+						<li>
+							<div class="txt_wrap">
+								<div class="star">
+									<img src="./assets/img/star_on.png" alt="">
+									<img src="./assets/img/star_on.png" alt="">
+									<img src="./assets/img/star_on.png" alt="">
+									<img src="./assets/img/star_on.png" alt="">
+									<img src="./assets/img/star_off.png" alt="">
+								</div>
+								<p class="txt">정말 좋네요 드론 서비스 덕분에 편하게 안전 점검 할 수 있었습니다 강추합니다 앞으로도 자주 사용할게요</p>
+								<p class="name_day"><span>김고객</span><span>2019.06.28</span></p>
+							</div>
+						</li>
+					</ul>
+					<div class="paging_area">
+						<span></span>
+						<a class="on" href="">1</a>
+						<a href="">2</a>
+						<a href="">3</a>
+						<a href="">4</a>
+						<a href="">5</a>
+						<a href="">6</a>
+						<a href="">7</a>
+						<a href="">8</a>
+						<a href="">9</a>
+						<a href="">10</a>
+						<span></span>
+					</div>
+					<div class="mo_paging_area">
+						<a href="">더보기<span>10/258</span><img src="./assets/img/mo_paging_arrow.png" alt=""></a>
+					</div>
+				</div>
+				<div class="item_view03">
+					<h2>이런 상품은 어떠세요?</h2>
+					<ul>
+						<li>
+							<img src="./assets/img/item_view03_img01.jpg" alt="">
+							<div class="txt">
+								<p>[드론] 30배줌 영상 드론</p>
+								<span>30배줌 카메라 장착 드론</span>
+							</div>
+						</li>
+						<li>
+							<img src="./assets/img/item_view03_img02.jpg" alt="">
+							<div class="txt">
+								<p>[영상] 실시간 LTE 영상</p>
+								<span>LTE 중계 영상 카메라</span>
+							</div>
+						</li>
+						<li>
+							<img src="./assets/img/item_view03_img03.jpg" alt="">
+							<div class="txt">
+								<p>[기타] 드론스테이션</p>
+								<span>드론 충전, 보관</span>
+							</div>
+						</li>
+						<li>
+							<img src="./assets/img/item_view03_img04.jpg" alt="">
+							<div class="txt">
+								<p>[기타] 드론스테이션</p>
+								<span>드론 충전, 보관</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="review_pop"><!-- 19.06.05 리뷰 팝업 추가 -->
+			<div class="black_bg"></div>
+			<div class="reviewCon">
+				<h3>리뷰 수정<img class="pop_x" src="./assets/img/menu_x.png" alt=""></h3>
+				<dl>
+					<dt>
+						<p>[드론] 30배줌 영상 드론</p>
+						<div class="star">
+							<span>별점 선택</span>
+							<img class="on" src="./assets/img/star_on.png" alt="">
+							<img class="on" src="./assets/img/star_on.png" alt="">
+							<img class="on" src="./assets/img/star_on.png" alt="">
+							<img class="on" src="./assets/img/star_on.png" alt="">
+							<img src="./assets/img/star_off.png" alt="">
+						</div>
+					</dt>
+					<dd>
+						<textarea name="" id="" cols="30" rows="10" placeholder="상품의 사용 후기를 입력해 주세요. 부적절한 단어가 사용 된 리뷰는 관리자의 제재를 받을 수 있습니다.">화질도 좋고 조작 방법도 어렵지 않아서 쉽게 사용했습니다~^^</textarea>
+						<div class="btn">
+							<a href="">리뷰 수정</a>
+						</div>
+					</dd>
+				</dl>
+			</div>
+		</div>
+		<!--#include file="/include/_footer.html"-->
+	</div>
+</body>
+</html>

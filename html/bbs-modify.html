@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="/include/_head.html"-->
+</head>
+<body>
+	<div class="wrap">
+        <!--#include file="/include/_header.html"-->
+        <!--#include file="/include/_location.html"-->
+		<div class="sub-cont-wrap">
+            <p class="sub-title">자유 게시판</p>
+            <div class="subCon">
+                <div class="bbs-write-wrap">
+                    <dl class="write-subject">
+                        <dt>제목</dt>
+                        <dd>
+                            <input type="text" class="bbs-subject">
+                        </dd>
+                    </dl>
+                    <dl class="write-cont">
+                        <dt>내용</dt>
+                        <dd>
+                            <textarea name="" id="" placeholder="내용을 작성해주세요." class="editor"></textarea> <!-- 수정 19.06.25 -->
+                        </dd>
+                    </dl>
+                    <!-- 수정 19.06.26 -->
+                    <!-- 추가 19.06.25 -->
+                    <dl class="write-attach no-margin">
+                        <dt>첨부파일</dt>
+                        <dd>
+                            <input type="text" class="attach-name" disabled="disabled" placeholder="파일선택">
+                            <input type="file" id="btn-attach" class="btn-attach">
+                            <label for="btn-attach">파일찾기</label>
+                        </dd>
+                    </dl>
+                    <!--// 추가 19.06.25 -->
+                    <!--// 수정 19.06.26 -->
+                </div>
+                <div class="reserv_btn">
+                    <a href="./bbs-list.html">취소하기</a>
+                    <a href="#none">수정하기</a>
+                </div>
+            </div>
+		</div>
+		<!--#include file="/include/_footer.html"-->
+	</div>
+</body>
+</html>

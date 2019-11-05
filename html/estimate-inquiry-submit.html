@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="/include/_head.html"-->
+</head>
+<body>
+	<div class="wrap">
+        <!--#include file="/include/_header.html"-->
+        <!--#include file="/include/_location.html"-->
+		<div class="sub-cont-wrap">
+
+			<div class="subCon estimate estimate_inquiry_submit">
+				<div class="estimate_top">
+					<h3>견적 상담 <span>신청 접수</span>가 <span>완료</span> 되었습니다.</h3>
+					<p> 고객님의 요청 사항을 담당자 확인 후<br /> 빠르게 연락 드리겠습니다.</p>
+				</div>
+				<div class="estimate_inquiry01">
+					<div class="table_wrap">
+						<table>
+							<colgroup>
+								<col width="15%">
+								<col width="17%">
+								<col width="19%">
+								<col width="16%">
+								<col width="*">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>제공 항목</th>
+									<th>선택 유형</th>
+									<th>단가 / 개수</th>
+									<th>총액</th>
+									<th>비고</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>기체</td>
+									<td>렌탈</td>
+									<td class="num">1,000,000원 x 1개</td>
+									<td class="num"><span>1,000,000</span>원</td>
+									<td><p>선택 기체 : 유시스 TB304</p></td>
+								</tr>
+								<tr>
+									<td>카메라</td>
+									<td>렌탈</td>
+									<td class="num">300,000원 x 1개</td>
+									<td class="num"><span>300,000</span>원</td>
+									<td class="pc-only"></td>
+								</tr>
+								<tr>
+									<td>관제 시스템</td>
+									<td>클라우드 서비스</td>
+									<td class="num">100,000원 x 1개</td>
+									<td class="num"><span>100,000</span>원</td>
+									<td><p>1회 사용 : 10만원, 월정액 :100만원 </p></td>
+								</tr>
+								<tr>
+									<td>영상 시스템</td>
+									<td>클라우드 서비스</td>
+									<td class="num">100,000원 x 1개</td>
+									<td class="num"><span>100,000</span>원</td>
+									<td><p>1회 사용 : 10만원, 월정액 :100만원 </p></td>
+								</tr>
+								<tr>
+									<td>보험</td>
+									<td>일회성</td>
+									<td class="num">50,000원 x 1개</td>
+									<td class="num"><span>50,000</span>원</td>
+									<td><p>대인, 대물만 가입 가능</p></td>
+								</tr>
+								<tr>
+									<td>설치비</td>
+									<td>일회성</td>
+									<td class="num">300,000원 x 1개</td>
+									<td class="num"><span>300,000</span>원</td>
+									<td><p>환경 조사, 현장 세팅, 운용 비용</p></td>
+								</tr>
+								<tr class="sum">
+									<td colspan="3"><strong>합계(VAT별도)</strong></td>
+									<td class="num"><strong>1,850,000</strong>원</td>
+									<td class="pc-only"></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="btn">
+						<a href="javascript:;" class="more">전체보기<img src="./assets/img/estimate_arrow_d.png" alt=""></a>
+					</div>
+					<script>
+						if ( $(window).width() > 720 ){
+							var table_all_h = $(".table_wrap table").outerHeight();
+							var table_borderTop = Number( $(".table_wrap table").css("borderTopWidth").replace("px", "") )
+							var table_td_h = $(".table_wrap thead").height() + $(".table_wrap tbody tr:eq(0)").outerHeight() + table_borderTop;
+						} else {
+							var table_all_h = $(".table_wrap table").outerHeight();
+							var table_borderTop = Number( $(".table_wrap table").css("borderTopWidth").replace("px", "") )
+							var table_td_h = $(".table_wrap tbody tr:eq(0)").outerHeight() + table_borderTop;
+						}
+						$(".table_wrap").height(table_td_h);
+
+						$(".btn .more").click(function(){
+							if ( !$(this).hasClass("on") ){
+								$(this).addClass("on").html("접어두기<img src='./assets/img/estimate_arrow_u.png' alt=''>");
+								$(".table_wrap").stop().animate({height: table_all_h}, "fast");
+							} else {
+								$(this).removeClass("on").html("전체보기<img src='./assets/img/estimate_arrow_d.png' alt=''>");
+								$(".table_wrap").stop().animate({height: table_td_h}, "fast");
+							}
+						});
+
+						$(window).resize(function(){
+							if ( $(window).width() > 720 ){
+								table_all_h = $(".table_wrap table").outerHeight();
+								table_borderTop = Number( $(".table_wrap table").css("borderTopWidth").replace("px", "") )
+								table_td_h = $(".table_wrap thead").height() + $(".table_wrap tbody tr:eq(0)").outerHeight() + table_borderTop;
+							} else {
+								table_all_h = $(".table_wrap table").outerHeight();
+								table_borderTop = Number( $(".table_wrap table").css("borderTopWidth").replace("px", "") )
+								table_td_h = $(".table_wrap tbody tr:eq(0)").outerHeight() + table_borderTop;
+							}
+							$(".table_wrap").height(table_td_h);
+						});
+					</script>
+				</div>
+				<table class="estimate_submit"><!-- 19.07.09 수정 -->
+					<tr>
+						<th>성함</th>
+						<td>김드론</td>
+						<th>소속회사</th>
+						<td>드론기업</td>
+					</tr>
+					<tr>
+						<th>연락처</th>
+						<td>010.1234.4579</td>
+						<th>이메일</th>
+						<td>sipark@da-rum.com</td>
+					</tr>
+					<tr>
+						<th>기타(특이사항)</th>
+						<td colspan="3">15시 이후에 연락 주세요.</td>
+					</tr>
+				</table>
+				<div class="btn_wrap">
+					<a href="./index.html">홈페이지 메인</a>
+					<a href="./mypage.html">마이페이지</a>
+				</div>
+			</div>
+		</div>
+		<!--#include file="/include/_footer.html"-->
+	</div>
+</body>
+</html>

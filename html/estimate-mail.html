@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="/include/_head.html"-->
+</head>
+<body>
+	<div class="wrap">
+        <!--#include file="/include/_header.html"-->
+        <!--#include file="/include/_location.html"-->
+		<div class="sub-cont-wrap">
+
+			<div class="subCon estimate">
+				<div class="estimate_top">
+					<h3><span>견적 신청</span>이 <span>완료</span> 되었습니다.</h3>
+					<strong>견적 번호 : <span>20190411-0001468</span></strong>
+					<p>김고객 님, 요청하신 견적 신청이 완료 되었습니다. <br />고객님의 견적 사항을 담당자가 검토한 후, 메일로 견적서를 보내 드리겠습니다.</p>
+				</div>
+				<table><!-- 19.06.13 table 전반적인 수정 -->
+					<colgroup>
+						<col width="14%">
+						<col width="16%">
+						<col width="18%">
+						<col width="105px">
+						<col width="15%">
+						<col width="*">
+					</colgroup>
+					<thead>
+						<tr>
+							<th>제공 항목</th>
+							<th>선택 유형</th>
+							<th>단가 / 개수</th>
+							<th>할인율</th>
+							<th>총액</th>
+							<th>비고</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>기체</td>
+							<td>렌탈</td>
+							<td class="num num01">1,000,000원 x 1개</td>
+							<td class="num discount">10%<span>할인</span></td>
+							<td class="num num02"><span>1,000,000</span>원</td>
+							<td><p>선택 기체 : 유시스 TB304</p></td>
+						</tr>
+						<tr>
+							<td>카메라</td>
+							<td>렌탈</td>
+							<td class="num num01">300,000원 x 1개</td>
+							<td class="num discount">10%<span>할인</span></td>
+							<td class="num num02"><span>300,000</span>원</td>
+							<td class="pc-only"></td>
+						</tr>
+						<tr>
+							<td>관제 시스템</td>
+							<td>클라우드 서비스</td>
+							<td class="num num01">100,000원 x 1개</td>
+							<td class="num discount">20%<span>할인</span></td>
+							<td class="num num02"><span>100,000</span>원</td>
+							<td><p>1회 사용 : 10만원, 월정액 :100만원 </p></td>
+						</tr>
+						<tr>
+							<td>영상 시스템</td>
+							<td>클라우드 서비스</td>
+							<td class="num num01">100,000원 x 1개</td>
+							<td class="pc-only"></td>
+							<td class="num num02"><span>100,000</span>원</td>
+							<td><p>1회 사용 : 10만원, 월정액 :100만원 </p></td>
+						</tr>
+						<tr>
+							<td>보험</td>
+							<td>일회성</td>
+							<td class="num num01">50,000원 x 1개</td>
+							<td class="num discount">10%<span>할인</span></td>
+							<td class="num num02"><span>50,000</span>원</td>
+							<td><p>대인, 대물만 가입 가능</p></td>
+						</tr>
+						<tr>
+							<td>설치비</td>
+							<td>일회성</td>
+							<td class="num num01">300,000원 x 1개</td>
+							<td class="num discount">30%<span>할인</span></td>
+							<td class="num num02"><span>300,000</span>원</td>
+							<td><p>환경 조사, 현장 세팅, 운용 비용</p></td>
+						</tr>
+						<tr class="sum">
+							<td colspan="4"><strong>합계(VAT별도)</strong></td>
+							<td class="num"><strong>1,850,000</strong>원</td>
+							<td class="pc-only"></td>
+						</tr>
+					</tbody>
+				</table>
+				<!-- 추가 19.06.05 -->
+				<div class="txt">
+					<p>*</p><strong>본 견적은 확정 견적금액이 아닌, 상품 표준단가로 계산한 초기 견적 금액입니다.<br class="mobile-only"><span>고객님의 사용 환경 및 상세 서비스scene에 따라 최종 견적은 달라질 수 있습니다.</span><br class="mobile-only"><span>최종 견적은 고객님과 상담 진행 후 확정 됩니다.</span></strong>
+					<a href="" class="printBtn">인쇄하기</a><!-- 19.06.25 인쇄하기 추가 -->
+				</div>
+				<script>// 19.06.25 추가(인쇄하기)
+					var hashTag = window.location.hash;
+					if ( hashTag == "#print" ){
+						$(".wrap").addClass("print_wrap");
+					}
+				</script>
+				<!--// 추가 19.06.05 -->
+				<div class="btn_wrap">
+					<a href="./index.html">홈페이지 메인</a>
+					<a href="./mypage.html">마이페이지</a>
+				</div>
+			</div>
+		</div>
+		<!--#include file="/include/_footer.html"-->
+	</div>
+</body>
+</html>

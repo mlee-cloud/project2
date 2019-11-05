@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="/include/_head.html"-->
+</head>
+<body>
+	<div class="wrap">
+        <!--#include file="/include/_header.html"-->
+        <!--#include file="/include/_location.html"-->
+		<div class="sub-cont-wrap">
+            <p class="sub-title">내 정보 수정하기</p>
+            <div class="subCon">
+                <div class="join-wrap">
+                    <div class="join-form-wrap modify">
+                        <p>*필수입력 사항입니다.</p>
+                        <dl class="join-division">
+                            <dt>회원구분*</dt>
+                            <dd>
+                                <input type="radio" name="divition" id="divition01" checked>
+                                <label for="divition01">일반회원</label>
+                                <input type="radio" name="divition" id="divition02">
+                                <label for="divition02">제휴사 회원</label>
+                            </dd>
+                        </dl>
+                        <dl class="join-id modify">
+                            <dt>아이디*</dt>
+                            <dd>
+                                <span>
+                                    <input type="text" class="join-input" id="" value="abcde" readonly>
+                                </span>
+                            </dd>
+                        </dl>
+                        <dl class="join-pass">
+                            <dt>비밀번호*</dt>
+                            <dd>
+                                <span>
+                                    <input type="password" class="join-input" id="" placeholder="영문자+숫자조합 10자리 이상 입력해주세요."> <!-- 수정 19.06.18 -->
+                                </span>
+                            </dd>
+                        </dl>
+                        <dl class="join-pass-confirm">
+                            <dt>비밀번호 확인*</dt>
+                            <dd>
+                                <span>
+                                    <input type="password" class="join-input" id=""> <!-- 수정 2019.05.31 -->
+                                </span>
+                                <p>비밀번호가 일치하지 않습니다.</p>
+                            </dd>
+                        </dl>
+                        <!-- 추가 19.06.19 -->
+                        <dl class="join-pass">
+                            <dt>비밀번호</dt>
+                            <dd>
+                                <a href="javascript:void(0)" class="pass-edit">비밀번호 변경</a>
+                            </dd>
+                        </dl>
+                        <!--// 추가 19.06.19 -->
+                        <dl class="join-name">
+                            <dt>이름*</dt>
+                            <dd>
+                                <span>
+                                    <input type="text" class="join-input" id="">
+                                </span>
+                            </dd>
+                        </dl>
+                        <dl class="join-company">
+                            <dt>소속회사</dt>
+                            <dd>
+                                <span>
+                                    <input type="text" class="join-input" id="">
+                                </span>
+                            </dd>
+                        </dl>
+                        <!-- 수정 2019.05.28 -->
+                        <dl class="join-phone-certify">
+                            <dt>연락처*</dt>
+                            <dd>
+                                <span>
+                                    <input type="number" class="join-input phone" name="cellphoneNum" id="cellphoneNum" placeholder="'-'을 제외하고 입력해주세요."><!-- number로 교체 --> <!-- 수정 19.06.18 -->
+                                </span>
+                                <a href="javascript:void(0)" class="btn-certify">인증번호</a>
+                            </dd>
+                        </dl>
+                        <!--// 수정 2019.05.28 -->
+                        <!-- 추가 2019.05.28 -->
+                        <dl class="join-certify">
+                            <dt></dt>
+                            <dd>
+                                <span>
+                                    <input type="number" class="join-input" name="certifyNum" id="certifyNum" placeholder="인증번호를 입력하세요.">
+                                    <!-- 인증번호 불일치 시 아이콘 -->
+                                    <!-- <span class="certify-deny">불일치</span> -->
+                                    <!-- 인증번호 일치 시 아이콘 -->
+                                    <!-- <span class="certify-complete">일치</span> -->
+                                </span>
+                                <p>인증번호를 발송했습니다. (유효시간 5분)</p>
+                                <!-- 인증번호 불일치 시 메세지 -->
+                                <!-- <p class="deny">인증번호를 다시 확인해주세요.</p> -->
+                                <!-- 인증번호 일치 시 메세지 -->
+                                <!-- <p class="complete">인증이 성공했습니다.</p> -->
+                            </dd>
+                        </dl>
+                        <!--// 추가 2019.05.28 -->
+                        <dl class="join-email">
+                            <dt>이메일*</dt>
+                            <dd>
+                                <span>
+                                    <input type="text" class="join-input email" name="email" id="email01">
+                                    <span>@</span>
+                                    <input type="text" class="join-input email" name="email" id="email02">
+                                </span>
+                                <select name="email" id="email03">
+                                    <option value="">이메일 선택</option>
+                                </select>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="reserv_btn">
+                        <a href="javascript:void(0)">취소</a>
+                        <a href="javascript:void(0)">수정</a>
+                    </div>
+                </div>
+            </div>
+		</div>
+		<!--#include file="/include/_footer.html"-->
+	</div>
+</body>
+</html>

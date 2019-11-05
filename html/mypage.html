@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="/include/_head.html"-->
+</head>
+<body>
+	<div class="wrap">
+        <!--#include file="/include/_header.html"-->
+        <!--#include file="/include/_location.html"-->
+		<div class="sub-cont-wrap">
+            <div class="subCon">
+                <div class="mp-header">
+                    <div class="mp-left">
+                        <p><span>김고객 님,</span> 안녕하세요.</p>
+                        <div class="mp-btn">
+                            <a href="./member-modify.html">내 정보 수정하기</a>
+                            <a href="./withdraw.html">회원탈퇴</a>
+                        </div>
+                    </div>
+                    <div class="mp-right">
+                        <div>
+                            <p>대기중 예약</p>
+                            <p><span>2</span>건</p>
+                        </div>
+                        <div>
+                            <p>답변 완료 질문</p>
+                            <p><span>1</span>건</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mp-section">
+                    <p class="mp-sub-title">나의 이용 현황</p>
+                    <table class="tbl-mp change">
+                        <caption>나의 이용 현황</caption>
+                        <colgroup>
+                            <col style="width:17%">
+                            <col style="width:17%">
+                            <col style="width:auto">
+                            <col style="width:17%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>예약일자</th>
+                                <th>사용예정일</th>
+                                <th>상품정보</th>
+                                <th>처리상태</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="date"><span class="mobile-only">예약일자</span>2019.04.20</td>
+                                <td class="date"><span class="mobile-only">사용예정일</span>2019.05.05</td>
+                                <td class="tal subject"><a href="./item-view.html">[드론] 30배줌 영상 드론</a></td>
+                                <td class="tal status">예약 완료<a href="javascript:void(0)">취소</a></td>
+                            </tr>
+                            <tr>
+                                <td class="date"><span class="mobile-only">예약일자</span>2019.04.20</td>
+                                <td class="date"><span class="mobile-only">사용예정일</span>2019.05.05</td>
+                                <td class="tal subject"><a href="./item-view.html">[드론] 30배줌 영상 드론</a></td>
+                                <td class="tal status">예약 확인 중</td> <!-- 수정 19.06.05 -->
+                            </tr>
+                            <tr class="complete"> <!-- 완료된 건 'complete' 클래스 추가 -->
+                                <td class="date"><span class="mobile-only">예약일자</span>2019.04.20</td>
+                                <td class="date"><span class="mobile-only">사용예정일</span>2019.05.05</td>
+                                <td class="tal subject"><a href="./item-view.html">[드론] 30배줌 영상 드론</a></td>
+                                <td class="tal status">사용 완료<a href="javascript:void(0)" class="review_edit">리뷰작성</a></td> <!-- 수정 19.06.05 -->
+                            </tr>
+                            <tr class="complete"> <!-- 완료된 건 'complete' 클래스 추가 -->
+                                <td class="date"><span class="mobile-only">예약일자</span>2019.04.20</td>
+                                <td class="date"><span class="mobile-only">사용예정일</span>2019.05.05</td>
+                                <td class="tal subject"><a href="./item-view.html">[드론] 30배줌 영상 드론</a></td>
+                                <td class="tal status">사용 완료<a href="javascript:void(0)">내 리뷰</a></td> <!-- 수정 19.06.05 -->
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="paging_area">
+                        <span></span>
+                        <a class="on" href="">1</a>
+                        <a href="">2</a>
+                        <a href="">3</a>
+                        <a href="">4</a>
+                        <a href="">5</a>
+                        <a href="">6</a>
+                        <a href="">7</a>
+                        <a href="">8</a>
+                        <a href="">9</a>
+                        <a href="">10</a>
+                        <span></span>
+                    </div>
+                    <div class="mo_paging_area">
+                        <a href="javascript:void(0)">더보기<span>10/258</span><img src="./assets/img/mo_paging_arrow.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="mp-section">
+                    <p class="mp-sub-title">내가 올린 질문</p>
+                    <table class="tbl-mp change qna">
+                        <caption>내가 올린 질문</caption>
+                        <colgroup>
+                            <col style="width:17%">
+                            <col style="width:auto">
+                            <col style="width:17%">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>일자</th>
+                                <th>제목</th>
+                                <th>처리상태</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="date">2019.04.20</td>
+                                <td class="tal subject"><a href="./qna-view.html">하루만 사용할 수도 있나요?</a></td>
+                                <td class="tal status">답변 완료</td>
+                            </tr>
+                            <tr>
+                                <td class="date">2019.04.20</td>
+                                <td class="tal subject"><a href="./qna-view.html">드론에 대해 질문이 있습니다.</a></td>
+                                <td class="tal status">답변 대기중</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mp-section">
+                    <div class="mp-section-l">
+                        <p class="mp-sub-title">나의 고객 상담</p>
+                        <table class="tbl-mp">
+                            <caption>나의 고객 상담</caption>
+                            <colgroup>
+                                <col style="width:35.17%">
+                                <col style="width:auto">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>상담일자</th>
+                                    <th>용도 및 지역</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="date">2019.04.20</td>
+                                    <td class="tal">이벤트, 서울/경기</td>
+                                </tr>
+                                <tr>
+                                    <td class="date">2019.04.20</td>
+                                    <td class="tal">이벤트, 서울/경기</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mp-section-r">
+                        <p class="mp-sub-title">나의 견적 상담</p>
+                        <table class="tbl-mp">
+                            <caption>나의 견적 상담</caption>
+                            <colgroup>
+                                <col style="width:35.17%">
+                                <col style="width:auto">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>상담일자</th>
+                                    <th>견적번호</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="date">2019.04.20</td>
+                                    <td class="tal estimate">20190411-0001468</td>
+                                </tr>
+                                <tr>
+                                    <td class="date">2019.04.20</td>
+                                    <td class="tal estimate">20190411-0001217</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+		</div>
+		<div class="review_pop"><!-- 19.06.05 리뷰 팝업 추가 -->
+			<div class="black_bg"></div>
+			<div class="reviewCon">
+				<h3>리뷰 작성<img class="pop_x" src="./assets/img/menu_x.png" alt=""></h3>
+				<dl>
+					<dt>
+						<p>[드론] 30배줌 영상 드론</p>
+						<div class="star">
+							<span>별점 선택</span>
+							<img src="./assets/img/star_off.png" alt="">
+							<img src="./assets/img/star_off.png" alt="">
+							<img src="./assets/img/star_off.png" alt="">
+							<img src="./assets/img/star_off.png" alt="">
+							<img src="./assets/img/star_off.png" alt="">
+						</div>
+					</dt>
+					<dd>
+						<textarea name="" id="" cols="30" rows="10" placeholder="상품의 사용 후기를 입력해 주세요. 부적절한 단어가 사용 된 리뷰는 관리자의 제재를 받을 수 있습니다."></textarea>
+						<div class="btn">
+							<a href="">리뷰 등록</a>
+						</div>
+					</dd>
+				</dl>
+			</div>
+        </div>
+        <!-- 19.06.17 비밀번호 변경 팝업 -->
+        <div class="password_pop">
+            <div class="black_bg"></div>
+            <div class="infoForm">
+                <h3><span>비밀번호</span>를 변경해주세요.<img class="pop_x" src="./assets/img/menu_x.png" alt=""></h3>
+                <div class="pass-pop-wrap">
+                    <p>회원님의 정보를 안전하게 보호하고 개인정보 도용으로 인한 피해를 예방하기 위해, 3개월 이상 비밀번호를 변경하지 않은 경우 비밀번호를 변경하실 수 있도록 안내를 드리고 있습니다.</p>
+                    <div class="join-wrap">
+                        <div class="join-form-wrap">
+                            <dl class="join-pass">
+                                <dt>회원 아이디</dt>
+                                <dd>
+                                    <span>
+                                        <input type="text" class="join-input" id="">
+                                    </span>
+                                </dd>
+                            </dl>
+                            <dl class="join-pass">
+                                <dt>현재 비밀번호</dt>
+                                <dd>
+                                    <span>
+                                        <input type="password" class="join-input" id="">
+                                    </span>
+                                </dd>
+                            </dl>
+                            <dl class="join-pass">
+                                <dt>새로운 비밀번호</dt>
+                                <dd>
+                                    <span>
+                                        <input type="password" class="join-input" id="" placeholder="영문자+숫자조합 10자리 이상 입력해주세요."> <!-- 수정 19.06.18 -->
+                                    </span>
+                                </dd>
+                            </dl>
+                            <dl class="join-pass-confirm">
+                                <dt>새로운 비밀번호 확인</dt>
+                                <dd>
+                                    <span>
+                                        <input type="password" class="join-input" id="">
+                                    </span>
+                                    <p>비밀번호가 일치하지 않습니다.</p>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="reserv_btn">
+                            <a href="javascript:;">비밀번호 변경하기</a>
+                            <a href="javascript:;">다음에 변경하기</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <script type="text/javascript">
+            $('.password_pop').show();
+            $("html,  body").css({"overflowY":"hidden", "height":"100%"});
+        </script>
+        <!--// 19.06.17 비밀번호 변경 팝업 -->
+		<!--#include file="/include/_footer.html"-->
+	</div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link type="text/css" href="https://map.vworld.kr/css/ol3/vwmap.ol3.css" rel="stylesheet">
+    <link type="text/css" href="https://map.vworld.kr/css/vmap23.css" rel="stylesheet">
+	<!--#include file="/include/_head.html"-->
+</head>
+<body>
+	<div class="wrap">
+        <!--#include file="/include/_header.html"-->
+        <!--#include file="/include/_location.html"-->
+		<div class="sub-cont-wrap">
+            <p class="sub-title">비행가능지역검색</p>
+            <div class="subCon">
+                <div class="flight-search">
+                    <!-- 수정 19.06.07 -->
+                    <div class="search-box-wrap">
+                        <div class="search-box">
+                            <!-- 수정 19.06.13 -->
+                            <select name="address" id="address01">
+                                <option value="">지번주소</option>
+                                <option value="">도로명주소</option>
+                            </select>
+                            <input type="text" placeholder="예) 서울특별시 용산구 한강대로 32 / 한강로3가 65-228">
+                            <!--// 수정 19.06.13 -->
+                            <a href="javascript:void(0)" role="button" id="flightSearch">이동</a>
+                        </div>
+                    </div>
+                    <!--// 수정 19.06.07 -->
+                    <!-- 수정 19.06.13 -->
+                    <div class="flight-map-wrap">
+                        <div class="map-btn-wrap">
+                            <a href="javascript:void(0)" class="on">2D</a>
+                            <a href="javascript:void(0)">위성</a>
+                        </div>
+                        <div class="flight-map-box">
+                            <div class="flight-map">
+                                지도 삽입
+                            </div>
+                        </div>
+                        <p>마우스를 클릭 하시면 비행 가능 지역을 확인 하실 수 있습니다.</p> <!-- 수정 19.06.25 -->
+                    </div>
+                    <!--// 수정 19.06.13 -->
+                    <!-- '이동'버튼 클릭 시 보여지는 결과 영역 -->
+                    <div class="flight-result">
+                        <!-- 수정 19.06.20 -->
+                        <p class="result-title">이 지역은 <br class="mobile-only"><span class="forbid">"비행 금지 구역"</span> 입니다.<br><span>'비행'</span>과 <span>'촬영'</span>에 대한 <br class="mobile-only">민원신청이 필요합니다.</p>
+                        <p class="result-link">* 민원신청 : <a href="https://www.onestop.go.kr" target="_blank">www.onestop.go.kr</a></p>
+
+                        <p class="result-title">이 지역은 <br class="mobile-only"><span class="limit">"비행 제한 구역"</span> 입니다.<br><span>'비행'</span>과 <span>'촬영'</span>에 대한 <br class="mobile-only">민원신청이 필요합니다.</p>
+                        <p class="result-link">* 민원신청 : <a href="https://www.onestop.go.kr" target="_blank">www.onestop.go.kr</a></p>
+
+                        <p class="result-title">이 지역은 <br class="mobile-only"><span class="danger">"비행 위험 구역"</span> 입니다.<br><span>'비행'</span>과 <span>'촬영'</span>에 대한 <br class="mobile-only">민원신청이 필요합니다.</p>
+                        <p class="result-link">* 민원신청 : <a href="https://www.onestop.go.kr" target="_blank">www.onestop.go.kr</a></p>
+
+                        <p class="result-title">이 지역은 <br class="mobile-only"><span class="airport">"관제권"</span> 입니다.<br><span>'비행'</span>과 <span>'촬영'</span>에 대한 <br class="mobile-only">민원신청이 필요합니다.</p>
+                        <p class="result-link">* 민원신청 : <a href="https://www.onestop.go.kr" target="_blank">www.onestop.go.kr</a></p>
+
+                        <p class="result-title">이 지역은 <br class="mobile-only"><span class="allow">'촬영'</span> 에 대한 <br class="mobile-only">민원신청이 필요합니다.</p>
+                        <p class="result-link">* 민원신청 : <a href="https://www.onestop.go.kr" target="_blank">www.onestop.go.kr</a></p>
+                        <!--
+                            '비행 가능 구역' class="allow"
+                            '비행 금지 구역' class="forbid"
+                            '비행 제한 구역' class="limit"
+                            '비행 위험 구역' class="danger"
+                            '공항 및 관제 공역' class="airport"
+                        -->
+                        <!--// 수정 19.06.20 -->
+                        <p class="addr"><span>도로명 주소</span> : 서울특별시 마포구 월드컵북로 416 (상암동) LG유플러스 상암사옥</p>
+                        <p class="addr"><span>지번 주소</span> : 서울특별시 마포구 상암동 1600 LG유플러스 상암사옥</p>
+                    </div>
+                    <!--// '이동'버튼 클릭 시 보여지는 결과 영역 -->
+                    <!-- 수정 19.06.11 -->
+                    <p class="flight-info-title">비행 지역별 상세 안내</p> <!-- 추가 19.06.25 -->
+                    <table class="tbl-flight-info">
+                        <tbody>
+                            <tr class="forbid on"> <!-- 선택된 지역의 tr에 클래스 'on' 추가 -->
+                                <th>비행 금지 구역</th> <!-- 수정 19.06.20 -->
+                                <td>
+                                    <p class="info-title">안전&middot;국방 및 그 밖의 이유로 항공기의 비행을 금지하는 육지 또는 영해 상공에 설정된 일정 범위의 공역</p>
+                                    항공교통관제기관이나 군 통제기관의 인가를 받은 항공기를 제외한 모든 항공기 및 초경량 비행장치는 비행 금지 구역에서의 비행이 허용되지 않습니다. 위 사항을 준수하지 않은채 비행하는 경우는 관련 법률에 저촉되며 200만원 이하의 과태료가 부과될 수있습니다. 특히 군사적으로 금지된 구역내의 비행은 사전 경고 없이 요격될 수 있습니다.
+                                </td>
+                            </tr>
+                            <tr class="limit">
+                                <th>비행 제한 구역</th> <!-- 수정 19.06.20 -->
+                                <td>
+                                    <p class="info-title">항공사격&middot;대공사격 등으로 인한 위험으로부터 항공기의 안전을 보호하거나 그 밖의 이유로 비행허가를 받지 않은 항공기의 비행을 제한하는 육지 또는 영해 상공에 설정된 일정 범위의 공역</p>
+                                    총 중량 12kg 이하의 비사업용 무인비행장치의 경우 지표면에서 150m(500ft)미만의 고도에서 별도의 허가 없이 비행이 가능하지만 수도권의 경우 수도방위사령부, 기타 지역의 경우 군 통제기관의 인가가 필요한 경우가 있으니 비행 제한 구역 내의 허가받지 않은 비행은 지양하시기 바랍니다.
+                                </td>
+                            </tr>
+                            <tr class="danger">
+                                <th>비행 위험 구역</th> <!-- 수정 19.06.20 -->
+                                <td>
+                                    <p class="info-title">항공기의 비행 시 항공기 또는 지상시설물에 대한 위험이 예상되는 일정 범위의 공역</p>
+                                    총 중량이 12kg을 초과하는 기체는 비행 위험 구역의 비행을 위해 별도의 허가가 필요하며, 총 중량 12kg 이하의 비사업용 기체는 150m 이하의 고도에서 별도의 허가 없이 비행이 가능합니다. 다만 사업용 기체의 경우 기체무게와 관계없이 별도의 허가가 필요합니다.
+                                </td>
+                            </tr>
+                            <tr class="airport">
+                                <th>공항 및 관제 공역</th>
+                                <td>
+                                    <p class="info-title">공역등급에서 정한 바에 따라 항공기에게 항공교통관제업무를 제공하는 일정 범위의 공역</p>
+                                    인가받은 항공기를 제외한 모든 항공기 및 비행장치는 공항 반경 약 5.5km에서는 비행이 금지되며, 공항 반경 약 9.3km이내의 관제 공역 내에서는 비행허가가 필요합니다.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--// 수정 19.06.11 -->
+                </div>
+            </div>
+		</div>
+		<!--#include file="/include/_footer.html"-->
+	</div>
+</body>
+</html>

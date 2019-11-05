@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<!--#include file="/include/_head.html"-->
+</head>
+<body>
+	<div class="wrap">
+        <!--#include file="/include/_header.html"-->
+        <!--#include file="/include/_location.html"-->
+		<div class="sub-cont-wrap">
+            <p class="sub-title">검색하기</p>
+            <div class="subCon">
+                <div class="search-wrap">
+                    <div>
+                        <input type="text">
+                        <a href="javascript:void(0)">검색하기</a>
+                    </div>
+                </div>
+
+                <div class="result-box search">
+                    <p class="result-title"><span>드론</span>에 대한 결과가 없습니다.</p>
+                    <p class="result-txt">검색어의 철자 및 띄어쓰기가<br class="mobile-only"> 정확한지 확인해 주세요.</p>
+                </div>
+            </div>
+		</div>
+		<!--#include file="/include/_footer.html"-->
+    </div>
+    <script type="text/javascript">
+        // footer fixed 미적용
+        var htmlH = $('html').height(),
+            cssPb = $('.sub-cont-wrap').css('padding-bottom');
+        searchResize();
+        $(window).resize(function(){
+            searchResize();
+        });
+        function searchResize(){
+            $('html').removeClass('fixed_footer');
+            var windowH = $(window).height(),
+                diffH = windowH - htmlH,
+                newPb = diffH + parseInt(cssPb);
+            if(windowH > htmlH){
+                $('.sub-cont-wrap').css('padding-bottom', newPb);
+            };
+        };
+    </script>
+</body>
+</html>
